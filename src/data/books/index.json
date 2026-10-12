@@ -1,0 +1,66 @@
+[
+  {
+    "id": "zk",
+    "name": "中考词汇",
+    "desc": "中考英语大纲词汇，按词频从高到低排列",
+    "source": "built-in",
+    "count": 1600,
+    "order": 0
+  },
+  {
+    "id": "gk",
+    "name": "高考词汇",
+    "desc": "高考英语大纲词汇，按词频从高到低排列",
+    "source": "built-in",
+    "count": 3674,
+    "order": 1
+  },
+  {
+    "id": "cet4",
+    "name": "英语四级 CET-4",
+    "desc": "大学英语四级考试大纲词汇，按词频从高到低排列",
+    "source": "built-in",
+    "count": 3846,
+    "order": 2
+  },
+  {
+    "id": "cet6",
+    "name": "英语六级 CET-6",
+    "desc": "大学英语六级考试大纲词汇，按词频从高到低排列",
+    "source": "built-in",
+    "count": 5406,
+    "order": 3
+  },
+  {
+    "id": "ky",
+    "name": "考研词汇",
+    "desc": "全国硕士研究生统一招生考试英语大纲词汇，按词频从高到低排列",
+    "source": "built-in",
+    "count": 4801,
+    "order": 4
+  },
+  {
+    "id": "ielts",
+    "name": "雅思词汇 IELTS",
+    "desc": "雅思考试高频词汇，按词频从高到低排列",
+    "source": "built-in",
+    "count": 5038,
+    "order": 5
+  },
+  {
+    "id": "toefl",
+    "name": "托福词汇 TOEFL",
+    "desc": "托福考试高频词汇，按词频从高到低排列",
+    "source": "built-in",
+    "count": 6970,
+    "order": 6
+  },
+  {
+    "id": "gre",
+    "name": "GRE 词汇",
+    "desc": "GRE 考试高频词汇，按词频从高到低排列",
+    "source": "built-in",
+    "count": 7504,
+    "order": 7
+  }
+]

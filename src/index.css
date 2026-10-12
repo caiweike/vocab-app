@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+/* Tailwind v4 暗色模式改由 class 驱动（JS 切换 <html class="dark">） */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --color-brand-50: #eef6ff;
+  --color-brand-100: #d9ebff;
+  --color-brand-200: #bcddff;
+  --color-brand-300: #8ec8ff;
+  --color-brand-400: #59a8ff;
+  --color-brand-500: #3385fb;
+  --color-brand-600: #1f66f0;
+  --color-brand-700: #1851dd;
+  --color-brand-800: #1b43b3;
+  --color-brand-900: #1c3c8d;
+  /* 必须补上：源码里 5 处 dark:bg-brand-950 都依赖它，
+     缺了这个变量 Tailwind 不会生成对应工具类，深色背景会静默失效 */
+  --color-brand-950: #142c6b;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  font-family: var(--font-sans);
+}
+
+/* 焦点可见但不刺眼 */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-500;
+}
+
+/* 学习卡片的正误反馈色 */
+.opt-correct {
+  @apply border-emerald-500 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-200;
+}
+.opt-wrong {
+  @apply border-rose-500 bg-rose-50 text-rose-800 dark:bg-rose-950/60 dark:text-rose-200;
+}
+.opt-idle {
+  @apply border-slate-200 bg-white hover:border-brand-300 hover:bg-brand-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-brand-700 dark:hover:bg-slate-800;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-rise {
+  animation: rise 0.28s ease-out both;
+}
+
+/**
+ * 段落里的目标词高亮。
+ * 单独写成类而不是堆 Tailwind 工具类：深色下要保证和卡片底色（slate-900）拉开对比，
+ * 并且加字重与描边 —— 不能只靠颜色区分，否则对比度一低就"看不见"。
+ */
+.target-word {
+  border-radius: 0.25rem;
+  padding: 0.05em 0.28em;
+  font-weight: 650;
+  background: var(--color-brand-200);
+  color: var(--color-brand-900);
+  box-shadow: 0 0 0 1px var(--color-brand-300);
+}
+.dark .target-word {
+  background: var(--color-brand-900);
+  color: var(--color-brand-100);
+  box-shadow: 0 0 0 1px var(--color-brand-500);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise {
+    animation: none;
+  }
+}

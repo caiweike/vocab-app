@@ -1,0 +1,8 @@
+node_modules
+dist
+dict
+models
+tts-cache
+*.local
+.DS_Store
+*.log
